@@ -109,7 +109,11 @@ class PythonQuizApp:
             {"question": "Q78. Best practice for tool call errors:", "options": ["A) Handle via callbacks", "B) Ignore", "C) Restart", "D) Fail run"], "answer": "a", "explanation": "The best practice is to handle tool call errors using callbacks or hooks that can intercept the error and provide a graceful response or recovery mechanism."},
             {"question": "Q79. Context object provides:", "options": ["A) Dynamic info for runs", "B) Temperature config", "C) Markdown tables", "D) Guardrail tracing"], "answer": "a", "explanation": "The `Context` object provides dynamic, run-specific information that can be accessed by tools and hooks during the execution of an agent."},
             {"question": "Q80. Multi-run tracing helps:", "options": ["A) Tracking related runs together", "B) Reducing latency", "C) Preventing schema errors", "D) Handling hooks"], "answer": "a", "explanation": "Multi-run tracing allows developers to track and analyze a series of related agent runs as a single logical unit, which is useful for complex workflows and debugging."}
+        
+        
         ]
+
+
         return questions
     
     def display_timer(self):
@@ -162,7 +166,7 @@ class PythonQuizApp:
         
         for option in question_data["options"]:
             if st.button(option, key=option):
-                st.session_state.user_answer = option[1].lower()
+                st.session_state.user_answer = option[0].lower()
         
         # Navigation buttons
         col1, col2, col3 = st.columns(3)
