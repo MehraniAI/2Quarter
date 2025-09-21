@@ -162,7 +162,7 @@ class PythonQuizApp:
         
         for option in question_data["options"]:
             if st.button(option, key=option):
-                st.session_state.user_answer = option[0].lower()
+                st.session_state.user_answer = option[1].lower()
         
         # Navigation buttons
         col1, col2, col3 = st.columns(3)
@@ -283,4 +283,5 @@ class PythonQuizApp:
             self.show_results()
 if __name__ == "__main__":
     app = PythonQuizApp()
+
     app.run()
